@@ -16,7 +16,7 @@ import product from "../../assets/Products.png";
 
 
 export const Home = () => {
-  
+
   return (
 
     <Fragment>
@@ -38,12 +38,6 @@ export const Home = () => {
           <div className="col-md-6 text-center">
             <img src={logo} className="" alt="logo" />
           </div>
-        </div>
-      </section>
-
-      <section className="container-fluid">
-        <div className="row">
-          <div className="border_center">Who We Are?</div>
         </div>
       </section>
 
@@ -91,7 +85,7 @@ export const Home = () => {
               <h4>Global vision, Local action</h4>
               <img src={global} className="" alt="logo" />
               <p>
-                As a global powerhouse, we transcend borders, bringing you the best of worldwide innovation. Yet, our commitment is local – personalized service that understands and meets your unique needs.
+                As a global powerhouse, we transcend borders, bringing you the best of worldwide innovation. Yet, our commitment is local - personalized service that understands and meets your unique needs.
               </p>
             </div>
           </div>
@@ -107,7 +101,7 @@ export const Home = () => {
             <div className="each_sec_part">
               <h4>Future-Proofed Products</h4>
               <img src={product} className="" alt="logo" />
-              <p>We aren’t just a service provider; we’re your ticket to the future of technology. Anticipate industry shifts, turning them into opportunities for your success.Stay ahead with our arsenal of future-ready products.</p>
+              <p>We aren't just a service provider; we're your ticket to the future of technology. Anticipate industry shifts, turning them into opportunities for your success.Stay ahead with our arsenal of future-ready products.</p>
             </div>
           </div>
 
@@ -118,9 +112,21 @@ export const Home = () => {
           <p>
             Join us in a true partnership. Your success is our mission, and we navigate the tech landscape hand in hand with you.
             Together, let's shape tomorrow, today.</p>
-
         </div>
       </section>
+
+
+      <section className="container-fluid">
+        <div className="row">
+          <div className="border_center">Who We Are?</div>
+        </div>
+      </section>
+
+      <section>
+        <div className="title-section   left "><div className="top-title"> Welcome To Square Network Solutions</div><h2 className="title" > We are always Faster &amp; reliable</h2><div className="title-line"></div><div className="title-content" ><p>Square Network is your one-stop solution for all your IT infrastructure servicing needs. We are a one-of-its-kind organization that services consumers, retailers, SMBs and enterprise customers.</p><p>With the experience of handling more than 3800 clients across Tamil Nadu, the Square Network team is adept with the latest technology and has a thorough understanding of customer requirements to provide a world of IT hardware services, solutions and support across different industry verticals.</p><p><a href="#">Become a Client</a></p></div></div>
+      </section>
+
+    
 
 
       <section className="container-fluid">
