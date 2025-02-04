@@ -4,77 +4,75 @@ import "../../components/css/product.css";
 import $ from 'jquery';
 
 
-const Animation = () => {
+const Product = () => {
 
-  $(document).ready(function(){ 
-
+  $(document).ready(function () {
     //side panel for milestones
-      $(".filter-button").click(function(){
-        $(".panel").toggleClass("is-visible");
-        $("main").toggleClass("panel-visible");
-        $(".filter-button").toggleClass("header-visible");
-      });
-
-      var secondaryHead = $('nav'),
-      
-      secondaryHeadTopPosition = secondaryHead.offset().top;
-      $(window).on('scroll', function(){
-        if($(window).scrollTop() > secondaryHeadTopPosition ) {
-          secondaryHead.addClass("fixed-nav");
-          $(".filter-button").addClass("fixed-button");
-          $(".panel").addClass("fixed-panel");
-        } 
-        else {
-          secondaryHead.removeClass('fixed-nav');
-          $(".filter-button").removeClass("fixed-button");
-          $(".panel").removeClass("fixed-panel");
-        }
-      });
-
-      $(".option-one").click(function(){
-        $(".one").removeClass("hidden");
-        $(".two").addClass("hidden");
-      });
-      $(".option-two").click(function(){
-        $(".two").removeClass("hidden");
-        $(".one").addClass("hidden");
-      });
-      $(".all").click(function(){
-        $(".two").removeClass("hidden");
-        $(".one").removeClass("hidden");
-      });
-      $(".check").click(function(){
-        if(!($("#one").is(":checked")) && !($("#two").is(":checked")) && !($("#three").is(":checked"))){
-          $(".group1").removeClass("hidden");
-          $(".group2").removeClass("hidden");
-          $(".group3").removeClass("hidden");
-        }
-        else if($("#one").is(":checked")){
-          $(".group2").addClass("hidden");
-          $(".group3").addClass("hidden");
-          $(".group1").removeClass("hidden");
-          if($("#two").is(":checked")){
-            $(".group2").removeClass("hidden");
-          }
-          if($("#three").is(":checked")){
-            $(".group3").removeClass("hidden");
-          }
-        }
-        else if($("#two").is(":checked")){
-          $(".group1").addClass("hidden");
-          $(".group3").addClass("hidden");
-          $(".group2").removeClass("hidden");
-          if($("#three").is(":checked")){
-            $(".group3").removeClass("hidden");
-          }
-        }
-        else if($("#three").is(":checked")){
-          $(".group1").addClass("hidden");
-          $(".group2").addClass("hidden");
-          $(".group3").removeClass("hidden");
-        }
-      });
+    $(".filter-button").click(function () {
+      $(".panel").toggleClass("is-visible");
+      $("main").toggleClass("panel-visible");
+      $(".filter-button").toggleClass("header-visible");
     });
+  
+    var secondaryHead = $("nav"),
+      secondaryHeadTopPosition = secondaryHead.offset().top;
+    $(window).on("scroll", function () {
+      if ($(window).scrollTop() > secondaryHeadTopPosition) {
+        secondaryHead.addClass("fixed-nav");
+        $(".filter-button").addClass("fixed-button");
+        $(".panel").addClass("fixed-panel");
+      } else {
+        secondaryHead.removeClass("fixed-nav");
+        $(".filter-button").removeClass("fixed-button");
+        $(".panel").removeClass("fixed-panel");
+      }
+    });
+    $(".option-one").click(function () {
+      $(".one").removeClass("hidden");
+      $(".two").addClass("hidden");
+    });
+    $(".option-two").click(function () {
+      $(".two").removeClass("hidden");
+      $(".one").addClass("hidden");
+    });
+    $(".all").click(function () {
+      $(".two").removeClass("hidden");
+      $(".one").removeClass("hidden");
+    });
+    $(".check").click(function () {
+      if (
+        !$("#one").is(":checked") &&
+        !$("#two").is(":checked") &&
+        !$("#three").is(":checked")
+      ) {
+        $(".group1").removeClass("hidden");
+        $(".group2").removeClass("hidden");
+        $(".group3").removeClass("hidden");
+      } else if ($("#one").is(":checked")) {
+        $(".group2").addClass("hidden");
+        $(".group3").addClass("hidden");
+        $(".group1").removeClass("hidden");
+        if ($("#two").is(":checked")) {
+          $(".group2").removeClass("hidden");
+        }
+        if ($("#three").is(":checked")) {
+          $(".group3").removeClass("hidden");
+        }
+      } else if ($("#two").is(":checked")) {
+        $(".group1").addClass("hidden");
+        $(".group3").addClass("hidden");
+        $(".group2").removeClass("hidden");
+        if ($("#three").is(":checked")) {
+          $(".group3").removeClass("hidden");
+        }
+      } else if ($("#three").is(":checked")) {
+        $(".group1").addClass("hidden");
+        $(".group2").addClass("hidden");
+        $(".group3").removeClass("hidden");
+      }
+    });
+  });
+  
     
   return (
     <Fragment>
@@ -152,4 +150,4 @@ const Animation = () => {
   )
 }
 
-export default Animation;
+export default Product;

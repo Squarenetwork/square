@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Fragment } from "react";
 
+import "../css/slide.css"
+import "../Pages/Animation.js"
 import { useState } from 'react';
 import { TabContent, TabPane, Nav, NavItem, NavLink, Card, Button, CardTitle, CardText, Row, Col } from 'reactstrap';
 import classnames from 'classnames';
@@ -40,6 +42,67 @@ import {
 } from 'reactstrap';
 
 export const Home = () => {
+
+
+
+  
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const slides = [
+    {
+      img: "image/slide1.png",
+      author: "LUNDEV",
+      title: "DESIGN SLIDER",
+      topic: "ANIMAL",
+      description:
+        "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut sequi...",
+    },
+    {
+      img: "image/slide2.png",
+      author: "LUNDEV",
+      title: "DESIGN SLIDER",
+      topic: "ANIMAL",
+      description:
+        "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut sequi...",
+    },
+    {
+      img: "image/slide3.png",
+      author: "LUNDEV",
+      title: "DESIGN SLIDER",
+      topic: "ANIMAL",
+      description:
+        "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut sequi...",
+    },
+    {
+      img: "image/1.jpg",
+      author: "LUNDEV",
+      title: "DESIGN SLIDER",
+      topic: "ANIMAL",
+      description:
+        "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut sequi...",
+    },
+  ];
+
+  const nextSlide = () => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex === slides.length - 1 ? 0 : prevIndex + 1
+    );
+  };
+
+  const prevSlide = () => {
+    setCurrentIndex(
+      (prevIndex) => (prevIndex === 0 ? slides.length - 1 : prevIndex - 1)
+    );
+  };
+
+  // Start the auto-slide interval
+  useEffect(() => {
+    const autoSlide = setInterval(nextSlide, 7000); // 7 seconds delay for each slide
+    return () => clearInterval(autoSlide); // Cleanup on component unmount
+  }, []);
+
+  
+
 
   $(document).ready(function () {
 
@@ -107,6 +170,7 @@ export const Home = () => {
     }
   };
 
+
   return (
 
     <Fragment>
@@ -115,33 +179,176 @@ export const Home = () => {
       <div id='particle-network-animation'>
       </div>
 
+
+<div className="pa" id="particles-js">
+
       <UncontrolledCarousel
         items={[
 
           {
-            altText: 'slide 1',
-            caption: 'Animation',
+            // altText: 'Great things in business are never done by one person.They are done by a team of people.',
+            caption: 'Square Networks helps you	to save time and money',
             key: 1,
-            src: require('../../assets/slide1.png')
+            src: require('../../assets/slide2.png')
 
           },
 
           {
             altText: 'Slide 2',
-            caption: 'Slide 2',
+            caption: 'We deliver quality and service to clients ',
             key: 2,
-            src: require('../../assets/slide2.png')
+            src: require('../../assets/slide1.png')
           },
 
           {
             altText: 'Slide 3',
-            caption: 'Slide 3',
+            caption: 'We never dreamed about success , we worked  for it.',
             key: 3,
             src: require('../../assets/slide3.png')
 
           }
         ]}
       />
+</div>
+
+      
+{/* <section>
+<div class="bdt-timeline-container">
+  <div class="upk-salf-slider-wrapper">
+        <div class="swiper-container mySwiper2">
+            <div class="swiper-wrapper">
+                <div class="upk-salf-item swiper-slide">
+                    <div class="upk-salf-image-wrap">
+                        <img class="upk-xanc-img" src="https://picsum.photos/id/1011/1200/800" />
+                    </div>
+                    <div class="upk-salf-content-wrap">
+                        <h3 class="upk-salf-title" data-swiper-parallax-y="-150" data-swiper-parallax-duration="1200">
+                            we help you make modern interior
+                        </h3>
+                        <div class="upk-salf-desc" data-swiper-parallax-y="-200" data-swiper-parallax-duration="1400" >we will help you to make an elegant and luxurius interrior designed by porfessional interrior designer.</div>
+                        <div class="upk-salf-button" data-swiper-parallax-y="-300" data-swiper-parallax-duration="1500">
+                            <a class="link link--arrowed" href="#">read more
+                                <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 32 32">
+                                    <g fill="none" stroke="#ff215a" stroke-width="1.5" stroke-linejoin="round" stroke-miterlimit="10">
+                                    <circle class="arrow-icon--circle" cx="16" cy="16" r="15.12"></circle>
+                                    <path class="arrow-icon--arrow" d="M16.14 9.93L22.21 16l-6.07 6.07M8.23 16h13.98"></path>
+                                    </g>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="upk-salf-item swiper-slide">
+                    <div class="upk-salf-image-wrap">
+                        <img class="upk-xanc-img" src="https://picsum.photos/id/1026/1200/800" />
+                    </div>
+                    <div class="upk-salf-content-wrap">
+                        <h3 class="upk-salf-title" data-swiper-parallax-y="-150" data-swiper-parallax-duration="1200">
+                            we help you make modern interior
+                        </h3>
+                        <div class="upk-salf-desc" data-swiper-parallax-y="-200" data-swiper-parallax-duration="1400">we will help you to make an elegant and luxurius interrior designed by porfessional interrior designer.</div>
+
+                            <div class="upk-salf-button" data-swiper-parallax-y="-300" data-swiper-parallax-duration="1500">
+                            <a class="link link--arrowed" href="#">read more
+                                <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 32 32">
+                                    <g fill="none" stroke="#ff215a" stroke-width="1.5" stroke-linejoin="round" stroke-miterlimit="10">
+                                    <circle class="arrow-icon--circle" cx="16" cy="16" r="15.12"></circle>
+                                    <path class="arrow-icon--arrow" d="M16.14 9.93L22.21 16l-6.07 6.07M8.23 16h13.98"></path>
+                                    </g>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="upk-salf-item swiper-slide">
+                    <div class="upk-salf-image-wrap">
+                        <img class="upk-xanc-img" src="https://picsum.photos/id/201/1200/800" />
+                    </div>
+                    <div class="upk-salf-content-wrap">
+                        <h3 class="upk-salf-title" data-swiper-parallax-y="-150" data-swiper-parallax-duration="1200">
+                            we help you make modern interior
+                        </h3>
+                        <div class="upk-salf-desc" data-swiper-parallax-y="-200" data-swiper-parallax-duration="1400">we will help you to make an elegant and luxurius interrior designed by porfessional interrior designer.</div>
+
+                            <div class="upk-salf-button" data-swiper-parallax-y="-300" data-swiper-parallax-duration="1500">
+                            <a class="link link--arrowed" href="#">read more
+                                <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 32 32">
+                                    <g fill="none" stroke="#ff215a" stroke-width="1.5" stroke-linejoin="round" stroke-miterlimit="10">
+                                    <circle class="arrow-icon--circle" cx="16" cy="16" r="15.12"></circle>
+                                    <path class="arrow-icon--arrow" d="M16.14 9.93L22.21 16l-6.07 6.07M8.23 16h13.98"></path>
+                                    </g>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+              
+                <div class="upk-salf-item swiper-slide">
+                    <div class="upk-salf-image-wrap">
+                        <img class="upk-xanc-img" src="https://picsum.photos/id/167/1200/800" />
+                    </div>
+                    <div class="upk-salf-content-wrap">
+                        <h3 class="upk-salf-title" data-swiper-parallax-y="-150" data-swiper-parallax-duration="1200">
+                            we help you make modern interior
+                        </h3>
+                        <div class="upk-salf-desc" data-swiper-parallax-y="-200" data-swiper-parallax-duration="1400">we will help you to make an elegant and luxurius interrior designed by porfessional interrior designer.</div>
+
+                            <div class="upk-salf-button" data-swiper-parallax-y="-300" data-swiper-parallax-duration="1500">
+                            <a class="link link--arrowed" href="#">read more
+                                <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 32 32">
+                                    <g fill="none" stroke="#ff215a" stroke-width="1.5" stroke-linejoin="round" stroke-miterlimit="10">
+                                    <circle class="arrow-icon--circle" cx="16" cy="16" r="15.12"></circle>
+                                    <path class="arrow-icon--arrow" d="M16.14 9.93L22.21 16l-6.07 6.07M8.23 16h13.98"></path>
+                                    </g>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="upk-page-scroll">
+            <a class="arrow-up">
+                <div class="long-arrow-left"></div>
+                <span class="arrow-slide"></span>
+            </a>
+        </div>
+        <div class="upk-salf-nav-pag-wrap">
+            
+            <div class="upk-salf-navigation">
+                <div class="upk-button-prev upk-n-p">
+                    <a class="link link--arrowed" href="#">
+                        <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 32 32">
+                            <g fill="none" stroke="#ff215a" stroke-width="1.5" stroke-linejoin="round" stroke-miterlimit="10">
+                            <circle class="arrow-icon--circle" cx="16" cy="16" r="15.12"></circle>
+                            <path class="arrow-icon--arrow" d="M16.14 9.93L22.21 16l-6.07 6.07M8.23 16h13.98"></path>
+                            </g>
+                        </svg>
+                    </a>
+                </div>
+                <div class="upk-button-next upk-n-p">
+                    <a class="link link--arrowed" href="#">
+                        <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 32 32">
+                            <g fill="none" stroke="#ff215a" stroke-width="1.5" stroke-linejoin="round" stroke-miterlimit="10">
+                            <circle class="arrow-icon--circle" cx="16" cy="16" r="15.12"></circle>
+                            <path class="arrow-icon--arrow" d="M16.14 9.93L22.21 16l-6.07 6.07M8.23 16h13.98"></path>
+                            </g>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <div class="upk-salf-pagi-wrap">
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </div>
+ <a class="button" href="https://bdthemes.net/demo/wordpress/ultimate-post-kit/demo/">view wordpress demo</a>
+</div>
+</section> */}
+
 
       <section className="container">
         <div className="row">
@@ -500,6 +707,7 @@ export const Home = () => {
 
               <h3>Services</h3>
               <ul>
+                
                 <li>
                   Square Network Wi-Fi Service Management Platform (Square Network SMP) provides a secure, scalable and complete hotspot network.
                 </li>
