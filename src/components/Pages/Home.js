@@ -372,7 +372,8 @@ export const Home = () => {
             </a>
           </div>
 
-          <div className="col-md-6 text-center rotation_sec">
+          <div className="col-md-6 text-center ">
+            <div className="rotation_sec">
             <div className="slideshow">
 
               <div className="slide" style={{ "--i": 0 }}>
@@ -433,6 +434,7 @@ export const Home = () => {
                 <img src={poweradaptor} className="" alt="poweradaptor_squarenetwork" />
               </div>
 
+            </div>
             </div>
 
 

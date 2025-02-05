@@ -114,7 +114,7 @@ function NavBar() {
             <li className="nav-item">
               <NavLink
                 exact
-                to="/product"
+                to=""
                 activeClassName="active"
                 className="nav-links"
                 onClick={handleClick}
